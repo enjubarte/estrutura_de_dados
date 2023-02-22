@@ -1,14 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        Pilha<String> pilha = new Pilha<>();
+        ListaEncadeada<String> lista = new ListaEncadeada<>();
 
-        pilha.push("Eu");
-        pilha.push("Tu");
-        pilha.push("Nós");
+        lista.add("1");
+        lista.add("2");
+        lista.add("3");
+        lista.add("4");
+        lista.add("5");
+        lista.add("Douglas", 3);
 
-
-        System.out.println(pilha);
-        System.out.println(pilha.pop());
-        System.out.println(pilha);
+        System.out.println(lista);
     }
 }
