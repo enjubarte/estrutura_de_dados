@@ -24,6 +24,7 @@ public class ListaEncadeada<T> {
 
      public void add(T dado, int index){
         No<T> novo = new No<>(dado);
+        No<T> atual = getNo(index-1);
 
         if(isEmpty() || index == 0) {
             var aux = ref;
@@ -31,13 +32,9 @@ public class ListaEncadeada<T> {
             novo.setProximo(aux);
 
         }else{
-            var aux = getNo(index - 1);
-            var atual = aux.getProximo();
-
-            aux.setProximo(novo);
-            novo.setProximo(atual);
+            novo.setProximo(atual.getProximo());
+            atual.setProximo(novo);
         }
-
     }
 
     public T remove(int index){
@@ -55,6 +52,10 @@ public class ListaEncadeada<T> {
 
     public T get(int index){
         return getNo(index).getDado();
+    }
+
+    public void set(int index, T dado){
+        getNo(index).setDado(dado);
     }
 
     private No<T> getNo(int index){

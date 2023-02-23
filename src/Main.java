@@ -1,19 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-       ListaDuplamenteEncadeada<String> listaDupla = new ListaDuplamenteEncadeada<>();
+       ListaEncadeada<String> lista = new ListaEncadeada<>();
+       lista.add("1");
+       lista.add("2");
+       lista.add("3");
 
-       listaDupla.add("Douglas 1");
-       listaDupla.add("Douglas 2");
-       listaDupla.add("Douglas 3");
-       listaDupla.add("Douglas 4");
-       listaDupla.add("Douglas 5");
+       System.out.println(lista);
 
-       System.out.println(listaDupla);
-
-       listaDupla.remove(3);
-       System.out.println(listaDupla);
-
-       listaDupla.add(3,"Douglas");
-       System.out.println(listaDupla);
+       lista.set(2, "atualizou");
+       System.out.println(lista);
     }
 }
