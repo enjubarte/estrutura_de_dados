@@ -1,3 +1,5 @@
+package listaEncadeada;
+
 public class No<T>{
     private T dado;
     private No<T> proximo;
@@ -25,6 +27,6 @@ public class No<T>{
 
     @Override
     public String toString() {
-        return "No{" + "conteudo=" + dado + '}';
+        return "listaCircular.No{" + "conteudo=" + dado + '}';
     }
 }

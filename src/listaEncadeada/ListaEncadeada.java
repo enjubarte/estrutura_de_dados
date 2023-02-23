@@ -1,8 +1,12 @@
+package listaEncadeada;
+
 public class ListaEncadeada<T> {
     private No<T> ref;
+    private int size;
 
     public ListaEncadeada(){
         this.ref = null;
+        this.size = 0;
     }
 
     public void add(T dado){
@@ -20,6 +24,7 @@ public class ListaEncadeada<T> {
 
         assert aux != null;
         aux.setProximo(novo);
+        size++;
     }
 
      public void add(T dado, int index){
@@ -35,6 +40,8 @@ public class ListaEncadeada<T> {
             novo.setProximo(atual.getProximo());
             atual.setProximo(novo);
         }
+
+        size++;
     }
 
     public T remove(int index){
@@ -47,6 +54,7 @@ public class ListaEncadeada<T> {
 
         No<T> anterior = getNo(index-1);
         anterior.setProximo(pivor.getProximo());
+        size--;
         return pivor.getDado();
     }
 
@@ -54,7 +62,7 @@ public class ListaEncadeada<T> {
         return getNo(index).getDado();
     }
 
-    public void set(int index, T dado){
+    public void set(T dado, int index){
         getNo(index).setDado(dado);
     }
 
@@ -72,15 +80,7 @@ public class ListaEncadeada<T> {
     }
 
     public int size(){
-        int count = 0;
-        No<T> aux = ref;
-
-        while(aux!=null){
-            count++;
-            aux = aux.getProximo();
-        }
-
-        return count;
+        return this.size;
     }
 
     private void  validIndex(int index){
@@ -92,7 +92,7 @@ public class ListaEncadeada<T> {
         StringBuilder ret = new StringBuilder();
         var aux = ref;
         while (aux!=null){
-            ret.append("[No{dado=").append(aux.getDado()).append("}] ->");
+            ret.append("[listaCircular.No{dado=").append(aux.getDado()).append("}] ->");
             aux = aux.getProximo();
         }
         ret.append("null");

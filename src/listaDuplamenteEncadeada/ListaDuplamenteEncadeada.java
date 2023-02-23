@@ -1,3 +1,5 @@
+package listaDuplamenteEncadeada;
+
 public class ListaDuplamenteEncadeada<T>{
 
     private NoDuplo<T> primeiro;
@@ -68,6 +70,8 @@ public class ListaDuplamenteEncadeada<T>{
         return this.getNo(index).getDado();
     }
 
+    public void set(int index, T dado){ getNo(index).setDado(dado);}
+
     private NoDuplo<T> getNo(int index){
         NoDuplo<T> aux = primeiro;
 
@@ -82,11 +86,15 @@ public class ListaDuplamenteEncadeada<T>{
         return this.size;
     }
 
+    public boolean isEmpty(){
+        return primeiro == null && ultimo == null;
+    }
+
     public String toString(){
         StringBuilder ret = new StringBuilder();
 
         for(var i = primeiro; i != null; i = i.getProximo())
-            ret.append("[No{dado=").append(i).append("}] -> ");
+            ret.append("[listaCircular.No{dado=").append(i).append("}] -> ");
 
         ret.append("null");
         return ret.toString();
