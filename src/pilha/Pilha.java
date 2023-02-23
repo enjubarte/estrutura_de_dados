@@ -1,3 +1,4 @@
+package pilha;
 
 public class Pilha<T> {
     private No<T> ref;
@@ -37,7 +38,7 @@ public class Pilha<T> {
         var aux = ref;
 
         while (aux!=null){
-            header.append("  [No{dado=").append(aux.getDado()).append("}]\n");
+            header.append("  [listaCircular.No{dado=").append(aux.getDado()).append("}]\n");
             aux = aux.getProximo();
         }
 

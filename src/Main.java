@@ -1,13 +1,13 @@
+import listaCircular.ListaCircular;
+
 public class Main {
     public static void main(String[] args) {
-       ListaEncadeada<String> lista = new ListaEncadeada<>();
-       lista.add("1");
-       lista.add("2");
-       lista.add("3");
+        ListaCircular<String> listaCircular = new ListaCircular<>();
 
-       System.out.println(lista);
+        listaCircular.add("1");
+        listaCircular.add("2");
+        listaCircular.add("3");
 
-       lista.set(2, "atualizou");
-       System.out.println(lista);
+        System.out.println(listaCircular.get(0));
     }
 }

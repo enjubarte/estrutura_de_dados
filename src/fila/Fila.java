@@ -1,3 +1,6 @@
+package fila;
+
+
 
 public class Fila<T> {
 
@@ -47,7 +50,7 @@ public class Fila<T> {
         StringBuilder header = new StringBuilder();
         No<T> aux = ref;
         while(aux!=null){
-            header.append("[No{dado=").append(aux.getDado()).append("}] -> ");
+            header.append("[listaCircular.No{dado=").append(aux.getDado()).append("}] -> ");
             aux = aux.getProximo();
         }
 

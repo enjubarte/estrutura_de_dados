@@ -1,3 +1,5 @@
+package listaDuplamenteEncadeada;
+
 public class NoDuplo<T> {
     private T dado;
     private NoDuplo<T> anterior;
@@ -33,7 +35,7 @@ public class NoDuplo<T> {
 
     @Override
     public String toString() {
-        return "NoDuplo{" +
+        return "listaDuplamenteEncadeada.NoDuplo{" +
                 "dado=" + dado +
                 '}';
     }
